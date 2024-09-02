@@ -1,0 +1,244 @@
+@import "reset.css";
+
+//font
+@font-face {
+  font-family: Hanken Grotesk;
+  src: url(../assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+// Colors
+
+// Primary
+$lightRed: hsl(0, 100%, 67%);
+$orangeyYellow: hsl(39, 100%, 56%);
+$greenTeal: hsl(166, 100%, 37%);
+$cobaltBlue: hsl(234, 85%, 45%);
+
+// Gradients
+//background
+$lightSlateBlue: hsl(252, 100%, 67%);
+$lightRoyalBlue: hsl(241, 81%, 54%);
+//circle
+$violetBlue: hsla(256, 72%, 46%, 1);
+$persianBlue: hsla(241, 72%, 46%, 0);
+
+// Neutral
+$white: hsl(0, 0%, 100%);
+$paleBlue: hsl(221, 100%, 96%);
+$lightLavender: hsl(241, 100%, 89%);
+$darkGrayBlue: hsl(224, 30%, 27%);
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+p {
+  font-size: 18px;
+}
+
+body {
+  font-family: Hanken Grotesk;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+header {
+  background: linear-gradient(0deg, $lightRoyalBlue 0%, $lightSlateBlue 100%);
+  width: 375px;
+  text-align: center;
+
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+
+  .title {
+    font-weight: 800;
+    font-size: 18px;
+    color: $lightLavender;
+
+    margin: 20px 0;
+  }
+
+  .result {
+    width: 130px;
+    height: 130px;
+    border-radius: 100%;
+    background: linear-gradient(0deg, $persianBlue 0%, $violetBlue 100%);
+    margin: 0 auto;
+    font-weight: 600;
+    color: $lightLavender;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-size: 56px;
+      font-weight: 600;
+      color: $white;
+    }
+
+    p {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .opinion {
+    margin-top: 30px;
+    font-weight: 600;
+    font-size: 24px;
+    color: $white;
+  }
+
+  p {
+    margin: 20px 40px 40px 40px;
+    font-size: 16px;
+    color: $lightLavender;
+  }
+}
+.row {
+  padding: 30px;
+}
+article {
+  width: 375px;
+  text-align: left;
+
+  .title {
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 800;
+    color: $darkGrayBlue;
+  }
+
+  .axes li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 50px;
+    margin: 20px 0;
+
+    border-radius: 10px;
+
+    .axesIcon {
+      display: inline;
+      vertical-align: middle;
+      padding-left: 20px;
+    }
+
+    .axesvalue {
+      font-weight: 600;
+      padding-right: 20px;
+      color: hsl(300, 3%, 58%);
+      span {
+        color: $darkGrayBlue;
+      }
+    }
+
+    h1 {
+      font-weight: 600;
+      display: inline;
+      margin-left: 10px;
+    }
+  }
+
+  .axes li:first-of-type {
+    color: $lightRed;
+    background-color: transparentize($lightRed, 0.9);
+  }
+
+  .axes li:nth-of-type(2) {
+    color: $orangeyYellow;
+    background-color: transparentize($orangeyYellow, 0.9);
+  }
+
+  .axes li:nth-of-type(3) {
+    color: $greenTeal;
+    background-color: transparentize($greenTeal, 0.9);
+  }
+
+  .axes li:last-of-type {
+    color: $cobaltBlue;
+    background-color: transparentize($cobaltBlue, 0.9);
+  }
+
+  button {
+    font-weight: 600;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    border: 0;
+    background-color: $darkGrayBlue;
+    border-radius: 25px;
+    color: #fff;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background: linear-gradient(0deg, $lightRoyalBlue 0%, $lightSlateBlue 100%);
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  body {
+  }
+
+  .container {
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 376px) {
+  body {
+  }
+  .container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    align-content: center;
+  }
+
+  header {
+    border-radius: 25px;
+    height: 480px;
+  }
+
+  article {
+    box-shadow: 3px 3px 16px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  .result {
+    height: 180px !important;
+    width: 180px !important;
+
+    span {
+      font-size: 64px !important;
+    }
+  }
+
+  .title {
+    font-size: 24px !important;
+    margin: 30px 0 !important;
+  }
+
+  .opinion {
+    font-size: 32px !important;
+  }
+
+  p {
+    margin-top: 30px !important;
+    font-size: 20px !important;
+  }
+}
